@@ -1,0 +1,40 @@
+#!/bin/bash
+clear
+
+echo "Hi, $USER"
+
+echo "Let's setup your enviroment"
+
+echo "\n\n ========================== \n\n "
+
+echo "Installing curl.."
+
+sudo apt-get install curl
+
+echo "\n\n ========================== \n\n "
+
+echo " Setting ~/.gemrc"
+
+touch ~/.gemrc
+echo "gem: --no-rdoc --no-ri" > ~/.gemrc
+
+echo "\n\n ========================== \n\n "
+
+echo "Installing Ruby and Rails...."
+
+\curl -sSL https://get.rvm.io | bash -s stable --rails
+
+echo "\n\n ========================== \n\n "
+
+echo "Installing Node.js"
+
+sudo apt-get install python-software-properties
+echo
+sudo add-apt-repository ppa:chris-lea/node.js
+echo
+sudo apt-get update
+echo
+sudo apt-get install nodejs npm
+echo
+
+echo "Finished! "
